@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/presentation/constants/colors.dart';
-import 'package:whatsapp_clone/presentation/contacts/info.dart';
+
+import 'info.dart';
 
 class ContactList extends StatelessWidget {
   const ContactList({Key? key}) : super(key: key);

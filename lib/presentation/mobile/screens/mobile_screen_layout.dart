@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/presentation/constants/colors.dart';
-import 'package:whatsapp_clone/presentation/contacts/contact_list.dart';
+import 'package:whatsapp_clone/presentation/mobile/calls/calls.dart';
+import 'package:whatsapp_clone/presentation/mobile/status/status.dart';
+import '../contacts/contact_list.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
@@ -63,7 +65,19 @@ class MobileScreenLayout extends StatelessWidget {
             ],
           ),
         ),
-        body: const ContactList(),
+        body: const TabBarView(
+          children: [
+            Center(
+              child: ContactList(),
+            ),
+            Center(
+              child: StatusScreen(),
+            ),
+            Center(
+              child: CallScreen(),
+            ),
+          ],
+        ),
       ),
     );
   }
