@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/presentation/constants/colors.dart';
+import 'package:whatsapp_clone/presentation/mobile/contacts/view/info.dart';
 import 'package:whatsapp_clone/presentation/mobile/status/widgets/status_builder.dart';
-
-import '../../constants/colors.dart';
-import '../contacts/info.dart';
 
 class StatusScreen extends StatelessWidget {
   const StatusScreen({Key? key}) : super(key: key);
@@ -40,7 +39,7 @@ class StatusScreen extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
             child: Text('Recent updates'),
           ),
-          StatusBuilder(),
+          const StatusBuilder(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
