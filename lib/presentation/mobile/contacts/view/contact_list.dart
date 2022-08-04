@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/presentation/constants/colors.dart';
-
-import 'info.dart';
+import 'package:whatsapp_clone/presentation/mobile/contacts/view/info.dart';
+import 'package:whatsapp_clone/presentation/mobile/message/view/message_screen.dart';
 
 class ContactList extends StatelessWidget {
   const ContactList({Key? key}) : super(key: key);
@@ -25,8 +25,19 @@ class ContactList extends StatelessWidget {
             return Column(
               children: [
                 InkWell(
-                  onTap: () {},
                   child: ListTile(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MessageScreen(
+                            userName: info[index]['name'].toString(),
+                            profileImage: info[index]['profilePic'].toString(),
+                            lastSceen: info[index]['time'].toString(),
+                          ),
+                        ),
+                      );
+                    },
                     title: Text(
                       info[index]['name'].toString(),
                       style: const TextStyle(

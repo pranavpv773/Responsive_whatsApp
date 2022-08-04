@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../constants/colors.dart';
-import '../../contacts/info.dart';
+import 'package:whatsapp_clone/presentation/constants/colors.dart';
+import 'package:whatsapp_clone/presentation/mobile/contacts/view/info.dart';
 
 class StatusBuilder extends StatelessWidget {
   const StatusBuilder({Key? key}) : super(key: key);
