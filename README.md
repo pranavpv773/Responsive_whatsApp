@@ -2,7 +2,7 @@
 
  Flutter project.
 
-## Using MVVM Architecture, firebase, Provider
+## Using MVVM Architecture, firebase, Provider and Rest API
 
 This project is a starting point for a Flutter application.
 
