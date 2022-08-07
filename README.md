@@ -1,8 +1,8 @@
 # whatsapp_clone
 
-A new Flutter project.
+ Flutter project.
 
-## Getting Started
+## Using MVVM Architecture, firebase, Provider
 
 This project is a starting point for a Flutter application.
 
