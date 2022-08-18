@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/presentation/constants/colors.dart';
+import 'package:whatsapp_clone/app/constants/colors.dart';
 
 class MessageScreen extends StatelessWidget {
   const MessageScreen(
@@ -68,7 +68,7 @@ class MessageScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               left: 1.0,
             ),
             child: Container(
@@ -92,7 +92,7 @@ class MessageScreen extends StatelessWidget {
                   fillColor: appBarColor,
                   filled: true,
                   prefixIcon: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: IconButton(
                       onPressed: () {},
                       icon: const Icon(
@@ -133,7 +133,7 @@ class MessageScreen extends StatelessWidget {
                       kWidth10,
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.attach_file_sharp,
                           color: kGrey,
                         ),
@@ -141,7 +141,7 @@ class MessageScreen extends StatelessWidget {
                       kWidth10,
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.currency_rupee_sharp,
                           color: kGrey,
                         ),
@@ -149,7 +149,7 @@ class MessageScreen extends StatelessWidget {
                       kWidth10,
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.camera_alt,
                           color: kGrey,
                         ),
