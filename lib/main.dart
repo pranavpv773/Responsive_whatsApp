@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
+import 'package:whatsapp_clone/app/mobile/initialize/view/verify_phon.dart';
+import 'package:whatsapp_clone/app/mobile/initialize/view_model/choose_provider.dart';
 import 'package:whatsapp_clone/app/mobile/splash/view/splash.dart';
 import 'package:whatsapp_clone/app/mobile/splash/view_model/slash_provider.dart';
 import 'package:whatsapp_clone/app/responsive/responsive.dart';
@@ -20,7 +22,10 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => SplashProvider(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ChooseProvider(),
+        ),
       ],
       child: MaterialApp(
         navigatorKey: RoutesProvider.navigatorKey,
@@ -29,7 +34,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: backgroundColor,
         ),
         home: const ResponsiveLayout(
-          mobileScreenLayout: SplashScreen(),
+          mobileScreenLayout: VerifyPhone(),
           webScreenLayout: WebScreenLayout(),
         ),
       ),
