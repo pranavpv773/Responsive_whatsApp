@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:whatsapp_clone/app/mobile/initialize/view/choose_country.dart';
 import 'package:whatsapp_clone/app/mobile/routes/routes.dart';
+import 'package:whatsapp_clone/app/mobile/settings/view/settings.dart';
 
 class ServicesProvider with ChangeNotifier {
   void SelectedItem(BuildContext context, item) {
@@ -27,12 +28,12 @@ class ServicesProvider with ChangeNotifier {
         break;
       case 4:
         RoutesProvider.nextScreen(
-          screen: const ChooseCountry(),
+          screen: const SettingScreen(),
         );
         break;
       case 5:
         RoutesProvider.nextScreen(
-          screen: const ChooseCountry(),
+          screen: const SettingScreen(),
         );
         break;
     }

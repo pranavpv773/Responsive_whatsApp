@@ -26,19 +26,19 @@ class MoreOptions extends StatelessWidget {
           ),
         ),
         const PopupMenuItem<int>(
-          value: 2,
+          value: 3,
           child: Text(
             "Starred messages",
           ),
         ),
         const PopupMenuItem<int>(
-          value: 2,
+          value: 4,
           child: Text(
             "payments",
           ),
         ),
         const PopupMenuItem<int>(
-          value: 2,
+          value: 5,
           child: Text(
             "Settings",
           ),
@@ -67,25 +67,25 @@ class MoreOptions2 extends StatelessWidget {
           child: Text("New broadcast2"),
         ),
         const PopupMenuItem<int>(
-          value: 2,
+          value: 3,
           child: Text(
             "Linked devices2",
           ),
         ),
         const PopupMenuItem<int>(
-          value: 2,
+          value: 4,
           child: Text(
             "Starred messages",
           ),
         ),
         const PopupMenuItem<int>(
-          value: 2,
+          value: 5,
           child: Text(
             "payments",
           ),
         ),
         const PopupMenuItem<int>(
-          value: 2,
+          value: 6,
           child: Text(
             "Settings",
           ),

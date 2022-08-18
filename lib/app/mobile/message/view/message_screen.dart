@@ -17,43 +17,45 @@ class MessageScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         backgroundColor: appBarColor,
-        title: Row(
-          children: [
-            CircleAvatar(
-              backgroundImage: NetworkImage(
-                profileImage,
+        centerTitle: false,
+        title: Container(
+          child: Row(
+            children: [
+              CircleAvatar(
+                backgroundImage: NetworkImage(
+                  profileImage,
+                ),
               ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    userName,
-                    style: const TextStyle(
-                      fontSize: 16.0,
-                      fontFamily: 'Roboto',
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text(
-                    "last seen today at $lastSceen",
-                    style: const TextStyle(
+              const SizedBox(
+                width: 10,
+              ),
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      userName,
+                      style: const TextStyle(
+                        fontSize: 16.0,
+                        fontFamily: 'Roboto',
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                       overflow: TextOverflow.ellipsis,
-                      fontSize: 12,
                     ),
-                  ),
-                ],
+                    Text(
+                      "last seen today at $lastSceen",
+                      style: const TextStyle(
+                        overflow: TextOverflow.ellipsis,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         actions: [
           Row(
