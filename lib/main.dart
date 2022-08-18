@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
-import 'package:whatsapp_clone/app/mobile/initialize/view/verify_phon.dart';
 import 'package:whatsapp_clone/app/mobile/initialize/view_model/choose_provider.dart';
 import 'package:whatsapp_clone/app/mobile/splash/view/splash.dart';
 import 'package:whatsapp_clone/app/mobile/splash/view_model/slash_provider.dart';
-import 'package:whatsapp_clone/app/responsive/responsive.dart';
+import 'package:whatsapp_clone/responsive/responsive.dart';
 import 'app/mobile/routes/routes.dart';
-import 'app/web/screens/web_screen_layout.dart';
+import 'web/screens/web_screen_layout.dart';
 
 void main() {
   runApp(const MyApp());
