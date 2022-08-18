@@ -4,6 +4,7 @@ import 'package:whatsapp_clone/app/constants/colors.dart';
 import 'package:whatsapp_clone/app/mobile/initialize/view_model/choose_provider.dart';
 import 'package:whatsapp_clone/app/mobile/splash/view/splash.dart';
 import 'package:whatsapp_clone/app/mobile/splash/view_model/slash_provider.dart';
+import 'package:whatsapp_clone/app/mobile/utility/view_model/services.dart';
 import 'package:whatsapp_clone/responsive/responsive.dart';
 import 'app/mobile/routes/routes.dart';
 import 'web/screens/web_screen_layout.dart';
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => ChooseProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ServicesProvider(),
         ),
       ],
       child: MaterialApp(

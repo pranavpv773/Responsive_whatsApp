@@ -3,6 +3,7 @@ import 'package:whatsapp_clone/app/constants/colors.dart';
 import 'package:whatsapp_clone/app/mobile/calls/view/calls.dart';
 import 'package:whatsapp_clone/app/mobile/contacts/view/contact_list.dart';
 import 'package:whatsapp_clone/app/mobile/status/view/status.dart';
+import 'package:whatsapp_clone/app/mobile/utility/view/more_vert.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
@@ -31,13 +32,7 @@ class MobileScreenLayout extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.more_vert,
-                color: Colors.grey,
-              ),
-            ),
+            MoreOptions(),
           ],
           bottom: const TabBar(
             indicatorColor: tabColor,
