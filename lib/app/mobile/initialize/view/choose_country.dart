@@ -14,17 +14,18 @@ class ChooseCountry extends StatelessWidget {
               title: const Text('Choose a country'),
               actions: [
                 IconButton(
-                    onPressed: () {
-                      context.read<ChooseProvider>().searchOnPressTrue();
-                    },
-                    icon: const Icon(Icons.search))
+                  onPressed: () {
+                    context.read<ChooseProvider>().searchOnPressTrue(true);
+                  },
+                  icon: const Icon(Icons.search),
+                )
               ],
             )
           : AppBar(
               title: TextFormField(),
               leading: IconButton(
                 onPressed: () {
-                  context.read<ChooseProvider>().searchOnPressFalse();
+                  context.read<ChooseProvider>().searchOnPressTrue(false);
                 },
                 icon: const Icon(
                   Icons.arrow_back,
