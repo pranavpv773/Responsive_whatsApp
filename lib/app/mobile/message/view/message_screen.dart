@@ -17,6 +17,7 @@ class MessageScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: appBarColor,
         title: Row(
           children: [
@@ -28,17 +29,29 @@ class MessageScreen extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(userName),
-                Text(
-                  "last seen today at $lastSceen",
-                  style: const TextStyle(
-                    fontSize: 12,
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    userName,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontFamily: 'Roboto',
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-              ],
+                  Text(
+                    "last seen today at $lastSceen",
+                    style: const TextStyle(
+                      overflow: TextOverflow.ellipsis,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
