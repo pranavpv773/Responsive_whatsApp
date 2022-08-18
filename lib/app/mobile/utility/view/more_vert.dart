@@ -49,3 +49,50 @@ class MoreOptions extends StatelessWidget {
     );
   }
 }
+
+class MoreOptions2 extends StatelessWidget {
+  const MoreOptions2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton<int>(
+      color: appBarColor,
+      itemBuilder: (context) => [
+        const PopupMenuItem<int>(
+          value: 0,
+          child: Text("New group2"),
+        ),
+        const PopupMenuItem<int>(
+          value: 1,
+          child: Text("New broadcast2"),
+        ),
+        const PopupMenuItem<int>(
+          value: 2,
+          child: Text(
+            "Linked devices2",
+          ),
+        ),
+        const PopupMenuItem<int>(
+          value: 2,
+          child: Text(
+            "Starred messages",
+          ),
+        ),
+        const PopupMenuItem<int>(
+          value: 2,
+          child: Text(
+            "payments",
+          ),
+        ),
+        const PopupMenuItem<int>(
+          value: 2,
+          child: Text(
+            "Settings",
+          ),
+        ),
+      ],
+      onSelected: (item) =>
+          context.read<ServicesProvider>().SelectedItem(context, item),
+    );
+  }
+}
