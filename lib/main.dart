@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/presentation/constants/colors.dart';
-import 'package:whatsapp_clone/presentation/mobile/screens/view/mobile_screen_layout.dart';
-import 'package:whatsapp_clone/presentation/responsive/responsive.dart';
-import 'package:whatsapp_clone/presentation/web/screens/web_screen_layout.dart';
+import 'package:provider/provider.dart';
+import 'package:whatsapp_clone/app/constants/colors.dart';
+import 'package:whatsapp_clone/app/mobile/splash/view/splash.dart';
+import 'package:whatsapp_clone/app/mobile/splash/view_model/slash_provider.dart';
+import 'package:whatsapp_clone/app/responsive/responsive.dart';
+import 'app/mobile/routes/routes.dart';
+import 'app/web/screens/web_screen_layout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +16,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: backgroundColor,
-      ),
-      home: const ResponsiveLayout(
-        mobileScreenLayout: MobileScreenLayout(),
-        webScreenLayout: WebScreenLayout(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => SplashProvider(),
+        )
+      ],
+      child: MaterialApp(
+        navigatorKey: RoutesProvider.navigatorKey,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: backgroundColor,
+        ),
+        home: const ResponsiveLayout(
+          mobileScreenLayout: SplashScreen(),
+          webScreenLayout: WebScreenLayout(),
+        ),
       ),
     );
   }

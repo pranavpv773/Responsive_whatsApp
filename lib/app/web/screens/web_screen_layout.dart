@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/presentation/mobile/contacts/view/contact_list.dart';
-import 'package:whatsapp_clone/presentation/web/widgets/web_profile_bar.dart';
-import 'package:whatsapp_clone/presentation/web/widgets/web_search_bar.dart';
+import 'package:whatsapp_clone/app/mobile/contacts/view/contact_list.dart';
+import 'package:whatsapp_clone/app/web/widgets/web_profile_bar.dart';
+import 'package:whatsapp_clone/app/web/widgets/web_search_bar.dart';
 
 class WebScreenLayout extends StatelessWidget {
   const WebScreenLayout({Key? key}) : super(key: key);
