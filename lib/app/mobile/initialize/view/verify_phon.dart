@@ -34,14 +34,70 @@ class VerifyPhone extends StatelessWidget {
               'WhatsApp will need to verify your phone number.',
             ),
           ),
-          TextField(
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 78.0),
+            child: TextFormField(
+              cursorColor: tabColor,
+              decoration: const InputDecoration(
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: messageColor,
+                  ),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: tabColor,
+                  ),
+                ),
+                suffixIcon: Icon(
+                  Icons.arrow_drop_down_outlined,
+                  color: tabColor,
+                  size: 30,
+                ),
+              ),
               enableInteractiveSelection: true,
               readOnly: true,
               onTap: () {
-                RoutesProvider.nextScreen(screen: ChooseCountry());
-              })
+                RoutesProvider.nextScreen(screen: const ChooseCountry());
+              },
+            ),
+          ),
+          Row(
+            children: const [
+              Padding(
+                padding: EdgeInsets.only(left: 88.0),
+                child: VerifyTextFormField(),
+              ),
+            ],
+          ),
+          VerifyTextFormField()
         ],
       ),
+    );
+  }
+}
+
+class VerifyTextFormField extends StatelessWidget {
+  const VerifyTextFormField({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      cursorColor: tabColor,
+      decoration: const InputDecoration(
+        suffixIcon: Icon(
+          Icons.arrow_drop_down_outlined,
+          color: tabColor,
+          size: 30,
+        ),
+      ),
+      onTap: () {
+        RoutesProvider.nextScreen(
+          screen: const ChooseCountry(),
+        );
+      },
     );
   }
 }

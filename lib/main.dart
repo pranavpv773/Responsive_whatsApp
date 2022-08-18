@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: backgroundColor,
         ),
         home: const ResponsiveLayout(
-          mobileScreenLayout: VerifyPhone(),
+          mobileScreenLayout: SplashScreen(),
           webScreenLayout: WebScreenLayout(),
         ),
       ),
