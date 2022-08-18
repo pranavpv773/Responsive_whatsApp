@@ -68,7 +68,7 @@ class MessageScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.only(
+            padding: EdgeInsets.only(
               left: 1.0,
             ),
             child: Container(
@@ -78,41 +78,84 @@ class MessageScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25),
                 color: appBarColor,
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: const [
-                        Icon(
-                          Icons.emoji_emotions,
-                          color: kGrey,
-                        ),
-                        Text('Message'),
-                      ],
+              child: TextFormField(
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please fill this field';
+                  }
+                },
+                style: const TextStyle(
+                  color: kGrey,
+                  fontSize: 18,
+                ),
+                decoration: InputDecoration(
+                  fillColor: appBarColor,
+                  filled: true,
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.emoji_emotions,
+                        color: kGrey,
+                      ),
                     ),
-                    Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
-                        kWidth10,
-                        Icon(
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: const BorderSide(
+                      color: appBarColor,
+                      width: 2.0,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: const BorderSide(
+                      color: appBarColor,
+                      width: 2.0,
+                    ),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: const BorderSide(
+                      color: Colors.grey,
+                      width: 2.0,
+                    ),
+                  ),
+                  hintText: "Message",
+                  hintStyle: const TextStyle(
+                    fontSize: 15,
+                    color: kGrey,
+                  ),
+                  suffixIcon: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      kWidth10,
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
                           Icons.attach_file_sharp,
                           color: kGrey,
                         ),
-                        kWidth10,
-                        Icon(
+                      ),
+                      kWidth10,
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
                           Icons.currency_rupee_sharp,
                           color: kGrey,
                         ),
-                        kWidth10,
-                        Icon(
+                      ),
+                      kWidth10,
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
                           Icons.camera_alt,
                           color: kGrey,
-                        )
-                      ],
-                    ),
-                  ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
