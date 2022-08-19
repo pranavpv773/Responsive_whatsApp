@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
-import 'package:whatsapp_clone/app/mobile/routes/routes.dart';
 import 'package:whatsapp_clone/app/mobile/settings/view_model/utility/maps.dart';
 
 class ListviewBuilderHelper extends StatelessWidget {

@@ -70,7 +70,7 @@ class VerifyPhone extends StatelessWidget {
               ),
             ],
           ),
-          VerifyTextFormField()
+          const VerifyTextFormField()
         ],
       ),
     );

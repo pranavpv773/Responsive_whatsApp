@@ -1,3 +1,5 @@
+// ignore_for_file: body_might_complete_normally_nullable
+
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
 
@@ -57,24 +59,8 @@ class MessageScreen extends StatelessWidget {
             ],
           ),
         ),
-        actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.videocam),
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.call),
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.more_vert),
-              )
-            ],
-          ),
+        actions: const [
+          ActionButtons(),
         ],
       ),
       body: Container(color: Colors.indigo),
@@ -86,96 +72,7 @@ class MessageScreen extends StatelessWidget {
             padding: const EdgeInsets.only(
               left: 1.0,
             ),
-            child: Container(
-              width: width / 1.25,
-              height: height / 16,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                color: appBarColor,
-              ),
-              child: Expanded(
-                child: TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please fill this field';
-                    }
-                  },
-                  style: const TextStyle(
-                    color: kGrey,
-                    fontSize: 18,
-                  ),
-                  decoration: InputDecoration(
-                    fillColor: appBarColor,
-                    filled: true,
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.emoji_emotions,
-                          color: kGrey,
-                        ),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: const BorderSide(
-                        color: appBarColor,
-                        width: 2.0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: const BorderSide(
-                        color: appBarColor,
-                        width: 2.0,
-                      ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: const BorderSide(
-                        color: Colors.grey,
-                        width: 2.0,
-                      ),
-                    ),
-                    hintText: "Message",
-                    hintStyle: const TextStyle(
-                      fontSize: 15,
-                      color: kGrey,
-                    ),
-                    suffixIcon: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        kWidth10,
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.attach_file_sharp,
-                            color: kGrey,
-                          ),
-                        ),
-                        kWidth10,
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.currency_rupee_sharp,
-                            color: kGrey,
-                          ),
-                        ),
-                        kWidth10,
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.camera_alt,
-                            color: kGrey,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            child: FloatingMessage(width: width, height: height),
           ),
           Padding(
             padding: const EdgeInsets.only(
@@ -185,7 +82,7 @@ class MessageScreen extends StatelessWidget {
             child: SizedBox(
               width: width / 8,
               child: FloatingActionButton(
-                backgroundColor: Color(0xFFCB74),
+                backgroundColor: tabColor,
                 onPressed: () {},
                 child: const Icon(
                   Icons.mic,
@@ -195,6 +92,140 @@ class MessageScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ActionButtons extends StatelessWidget {
+  const ActionButtons({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: const [
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Icon(Icons.videocam),
+        ),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Icon(Icons.call),
+        ),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Icon(Icons.more_vert),
+        )
+      ],
+    );
+  }
+}
+
+class FloatingMessage extends StatelessWidget {
+  const FloatingMessage({
+    Key? key,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
+
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width / 1.25,
+      height: height / 16,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25),
+        color: appBarColor,
+      ),
+      child: TextFormField(
+        keyboardType: TextInputType.multiline,
+        maxLines: null,
+        expands: true,
+        style: const TextStyle(
+          overflow: TextOverflow.clip,
+          color: kGrey,
+          fontSize: 16,
+        ),
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(10),
+          fillColor: appBarColor,
+          filled: true,
+          prefixIcon: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2.0),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.emoji_emotions,
+                color: kGrey,
+              ),
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+            borderSide: const BorderSide(
+              color: appBarColor,
+              width: 2.0,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+            borderSide: const BorderSide(
+              color: appBarColor,
+              width: 2.0,
+            ),
+          ),
+          // border: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(30),
+          //   borderSide: const BorderSide(
+          //     color: Colors.grey,
+          //     width: 2.0,
+          //   ),
+          // ),
+          hintText: "Message",
+          hintStyle: const TextStyle(
+            fontSize: 20,
+            color: kGrey,
+          ),
+          suffixIcon: Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // IconButton(
+                //   onPressed: () {},
+                //   icon: const Icon(
+                //     Icons.attach_file_sharp,
+                //     color: kGrey,
+                //     size: 20,
+                //   ),
+                // ),
+                // IconButton(
+                //   onPressed: () {},
+                //   icon: const Icon(
+                //     Icons.currency_rupee_sharp,
+                //     color: kGrey,
+                //     size: 20,
+                //   ),
+                // ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.camera_alt,
+                    color: kGrey,
+                    size: 20,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

@@ -33,7 +33,7 @@ class MobileScreenLayout extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
-            MoreOptions(),
+            const MoreOptions(),
           ],
           bottom: const TabBar(
             indicatorColor: tabColor,
