@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         navigatorKey: RoutesProvider.navigatorKey,
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
-          appBarTheme: AppBarTheme(backgroundColor: appBarColor),
+          appBarTheme: const AppBarTheme(backgroundColor: appBarColor),
           scaffoldBackgroundColor: backgroundColor,
         ),
         home: const ResponsiveLayout(
