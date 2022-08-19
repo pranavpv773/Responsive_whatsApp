@@ -45,6 +45,7 @@ class SettingScreen extends StatelessWidget {
           const ListTile(
             leading: Icon(
               Icons.people,
+              color: kGrey,
             ),
             title: Text(
               'Invite a friend',

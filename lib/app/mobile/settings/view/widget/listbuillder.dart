@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:whatsapp_clone/app/constants/colors.dart';
 import 'package:whatsapp_clone/app/mobile/routes/routes.dart';
 import 'package:whatsapp_clone/app/mobile/settings/view_model/utility/maps.dart';
 
@@ -12,7 +11,7 @@ class ListviewBuilderHelper extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: ListView.builder(
-        physics: ClampingScrollPhysics(),
+        physics: const ClampingScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return Column(
@@ -36,11 +35,8 @@ class ListviewBuilderHelper extends StatelessWidget {
                     ),
                   ),
                   leading: Icon(
-                    IconData(
-                      int.parse(
-                        settings[index]['icon'].toString(),
-                      ),
-                    ),
+                    iconTypes[index],
+                    color: kGrey,
                   ),
                   // onTap: () {
                   //   RoutesProvider.nextScreen(
