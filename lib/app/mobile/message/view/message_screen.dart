@@ -93,83 +93,85 @@ class MessageScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25),
                 color: appBarColor,
               ),
-              child: TextFormField(
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please fill this field';
-                  }
-                },
-                style: const TextStyle(
-                  color: kGrey,
-                  fontSize: 18,
-                ),
-                decoration: InputDecoration(
-                  fillColor: appBarColor,
-                  filled: true,
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.emoji_emotions,
-                        color: kGrey,
-                      ),
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: const BorderSide(
-                      color: appBarColor,
-                      width: 2.0,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: const BorderSide(
-                      color: appBarColor,
-                      width: 2.0,
-                    ),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: const BorderSide(
-                      color: Colors.grey,
-                      width: 2.0,
-                    ),
-                  ),
-                  hintText: "Message",
-                  hintStyle: const TextStyle(
-                    fontSize: 15,
+              child: Expanded(
+                child: TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please fill this field';
+                    }
+                  },
+                  style: const TextStyle(
                     color: kGrey,
+                    fontSize: 18,
                   ),
-                  suffixIcon: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      kWidth10,
-                      IconButton(
+                  decoration: InputDecoration(
+                    fillColor: appBarColor,
+                    filled: true,
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: IconButton(
                         onPressed: () {},
                         icon: const Icon(
-                          Icons.attach_file_sharp,
+                          Icons.emoji_emotions,
                           color: kGrey,
                         ),
                       ),
-                      kWidth10,
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.currency_rupee_sharp,
-                          color: kGrey,
-                        ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: appBarColor,
+                        width: 2.0,
                       ),
-                      kWidth10,
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.camera_alt,
-                          color: kGrey,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: appBarColor,
+                        width: 2.0,
+                      ),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Colors.grey,
+                        width: 2.0,
+                      ),
+                    ),
+                    hintText: "Message",
+                    hintStyle: const TextStyle(
+                      fontSize: 15,
+                      color: kGrey,
+                    ),
+                    suffixIcon: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        kWidth10,
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.attach_file_sharp,
+                            color: kGrey,
+                          ),
                         ),
-                      )
-                    ],
+                        kWidth10,
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.currency_rupee_sharp,
+                            color: kGrey,
+                          ),
+                        ),
+                        kWidth10,
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.camera_alt,
+                            color: kGrey,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -183,7 +185,7 @@ class MessageScreen extends StatelessWidget {
             child: SizedBox(
               width: width / 8,
               child: FloatingActionButton(
-                backgroundColor: tabColor,
+                backgroundColor: Color(0xFFCB74),
                 onPressed: () {},
                 child: const Icon(
                   Icons.mic,
