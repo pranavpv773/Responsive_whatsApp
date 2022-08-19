@@ -2,13 +2,13 @@ const settings = [
   {
     'title': 'Account',
     'sub_title': 'Privacy,Security,change number',
-    'icon': '0x052b',
+    'icon': '926',
     'ontab': 'StatusScreen',
   },
   {
     'title': 'Chats',
     'sub_title': 'Theme,wallpapers,chat history',
-    'icon': '7894 ',
+    'icon': '1342 ',
     'ontab': 'StatusScreen',
   },
   {

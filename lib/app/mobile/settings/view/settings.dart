@@ -8,6 +8,7 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -40,7 +41,33 @@ class SettingScreen extends StatelessWidget {
               ),
             ),
           ),
-          ListviewBuilderHelper()
+          const ListviewBuilderHelper(),
+          const ListTile(
+            leading: Icon(
+              Icons.people,
+            ),
+            title: Text(
+              'Invite a friend',
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 28.0),
+            child: Column(
+              children: [
+                const Center(
+                  child: Text(
+                    'From',
+                    style: TextStyle(color: kGrey),
+                  ),
+                ),
+                Image.asset(
+                  'assets/fromMeta.png',
+                  width: width / 6,
+                  height: width / 19,
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );

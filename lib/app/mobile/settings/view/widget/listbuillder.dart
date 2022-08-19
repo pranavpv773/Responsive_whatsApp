@@ -42,11 +42,11 @@ class ListviewBuilderHelper extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onTap: () {
-                    RoutesProvider.nextScreen(
-                      screen: settings[index]['ontab'],
-                    );
-                  },
+                  // onTap: () {
+                  //   RoutesProvider.nextScreen(
+                  //     screen: settings[index]['ontab'],
+                  //   );
+                  // },
                 ),
               )
             ],
