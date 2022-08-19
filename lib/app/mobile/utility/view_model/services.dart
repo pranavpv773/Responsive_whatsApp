@@ -4,7 +4,7 @@ import 'package:whatsapp_clone/app/mobile/routes/routes.dart';
 import 'package:whatsapp_clone/app/mobile/settings/view/settings.dart';
 
 class ServicesProvider with ChangeNotifier {
-  void SelectedItem(BuildContext context, item) {
+  void selectedItem(BuildContext context, item) {
     switch (item) {
       case 0:
         RoutesProvider.nextScreen(
