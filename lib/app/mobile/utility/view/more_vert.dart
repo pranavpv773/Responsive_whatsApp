@@ -45,7 +45,7 @@ class MoreOptions extends StatelessWidget {
         ),
       ],
       onSelected: (item) =>
-          context.read<ServicesProvider>().SelectedItem(context, item),
+          context.read<ServicesProvider>().selectedItem(context, item),
     );
   }
 }
@@ -92,7 +92,7 @@ class MoreOptions2 extends StatelessWidget {
         ),
       ],
       onSelected: (item) =>
-          context.read<ServicesProvider>().SelectedItem(context, item),
+          context.read<ServicesProvider>().selectedItem(context, item),
     );
   }
 }
