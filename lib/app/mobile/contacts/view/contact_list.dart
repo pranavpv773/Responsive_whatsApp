@@ -4,6 +4,8 @@ import 'package:whatsapp_clone/app/constants/colors.dart';
 import 'package:whatsapp_clone/app/mobile/contacts/view/info.dart';
 import 'package:whatsapp_clone/app/mobile/message/view/message_screen.dart';
 import 'package:whatsapp_clone/app/mobile/message/view_model/message_provider.dart';
+import 'package:whatsapp_clone/app/mobile/new_message/view/new_message.dart';
+import 'package:whatsapp_clone/app/mobile/routes/routes.dart';
 
 class ContactList extends StatelessWidget {
   const ContactList({Key? key}) : super(key: key);
@@ -13,7 +15,11 @@ class ContactList extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: tabColor,
-        onPressed: () {},
+        onPressed: () {
+          RoutesProvider.nextScreen(
+            screen: const NewMessageScreen(),
+          );
+        },
         child: const Icon(
           Icons.message,
           color: Colors.white,

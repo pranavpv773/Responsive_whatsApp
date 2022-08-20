@@ -3,35 +3,23 @@ import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
 import 'package:whatsapp_clone/app/mobile/initialize/view_model/choose_provider.dart';
 
+import 'widgets/appbar_change.dart';
+
 class ChooseCountry extends StatelessWidget {
   const ChooseCountry({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: context.watch<ChooseProvider>().searchSelect == false
-          ? AppBar(
-              title: const Text('Choose a country'),
-              actions: [
-                IconButton(
-                  onPressed: () {
-                    context.read<ChooseProvider>().searchOnPressTrue(true);
-                  },
-                  icon: const Icon(Icons.search),
-                )
-              ],
+          ? PreferredSize(
+              preferredSize: Size.fromHeight(height / 15),
+              child: const ChooseAppbar(),
             )
-          : AppBar(
-              title: TextFormField(),
-              leading: IconButton(
-                onPressed: () {
-                  context.read<ChooseProvider>().searchOnPressTrue(false);
-                },
-                icon: const Icon(
-                  Icons.arrow_back,
-                  color: kGrey,
-                ),
-              ),
+          : PreferredSize(
+              preferredSize: Size.fromHeight(height / 15),
+              child: const SearchAppbar(),
             ),
       body: ListView(),
     );
