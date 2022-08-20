@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
 import 'package:whatsapp_clone/app/mobile/calls/view/calls.dart';
-import 'package:whatsapp_clone/app/mobile/contacts/view/contact_list.dart';
+import 'package:whatsapp_clone/app/mobile/message_list/view/contact_list.dart';
 import 'package:whatsapp_clone/app/mobile/initialize/view/widgets/appbar_change.dart';
 import 'package:whatsapp_clone/app/mobile/initialize/view_model/choose_provider.dart';
 import 'package:whatsapp_clone/app/mobile/status/view/status.dart';

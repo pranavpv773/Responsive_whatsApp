@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
 import 'package:whatsapp_clone/app/mobile/initialize/view_model/choose_provider.dart';
 import 'package:whatsapp_clone/app/mobile/message/view_model/message_provider.dart';
+import 'package:whatsapp_clone/app/mobile/message_list/view_model/message_list_provider.dart';
 import 'package:whatsapp_clone/app/mobile/screens/view_model/home_provider.dart';
 import 'package:whatsapp_clone/app/mobile/splash/view/splash.dart';
 import 'package:whatsapp_clone/app/mobile/splash/view_model/slash_provider.dart';
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => HomeProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => MessageListProvider(),
         ),
       ],
       child: MaterialApp(

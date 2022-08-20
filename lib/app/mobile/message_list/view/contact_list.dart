@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
-import 'package:whatsapp_clone/app/mobile/contacts/view/info.dart';
+import 'package:whatsapp_clone/app/mobile/message_list/view/info.dart';
 import 'package:whatsapp_clone/app/mobile/message/view/message_screen.dart';
 import 'package:whatsapp_clone/app/mobile/message/view_model/message_provider.dart';
+import 'package:whatsapp_clone/app/mobile/message_list/view_model/message_list_provider.dart';
 import 'package:whatsapp_clone/app/mobile/new_message/view/new_message.dart';
 import 'package:whatsapp_clone/app/mobile/routes/routes.dart';
 
@@ -34,8 +35,13 @@ class ContactList extends StatelessWidget {
               children: [
                 InkWell(
                   child: ListTile(
+                    selectedTileColor: chatBarMessage,
+                    selectedColor: tabColor,
+                    selected: context.watch<MessageListProvider>().isSelected,
                     onTap: () {
-                      context.read<MessageProvider>().disposeController();
+                      context
+                          .read<MessageProvider>()
+                          .disposeController(context);
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -74,6 +80,8 @@ class ContactList extends StatelessWidget {
                         color: Colors.grey,
                       ),
                     ),
+                    onLongPress: () =>
+                        context.read<MessageListProvider>().toggleSelection(),
                   ),
                 ),
                 const Divider(
