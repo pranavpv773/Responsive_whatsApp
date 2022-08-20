@@ -42,14 +42,11 @@ class ContactList extends StatelessWidget {
                       context
                           .read<MessageProvider>()
                           .disposeController(context);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MessageScreen(
-                            userName: info[index]['name'].toString(),
-                            profileImage: info[index]['profilePic'].toString(),
-                            lastSceen: info[index]['time'].toString(),
-                          ),
+                      RoutesProvider.nextScreen(
+                        screen: MessageScreen(
+                          userName: info[index]['name'].toString(),
+                          profileImage: info[index]['profilePic'].toString(),
+                          lastSceen: info[index]['time'].toString(),
                         ),
                       );
                     },
