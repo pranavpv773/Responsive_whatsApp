@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
 import 'package:whatsapp_clone/app/mobile/contacts/view/info.dart';
 import 'package:whatsapp_clone/app/mobile/message/view/message_screen.dart';
+import 'package:whatsapp_clone/app/mobile/message/view_model/message_provider.dart';
 
 class ContactList extends StatelessWidget {
   const ContactList({Key? key}) : super(key: key);
@@ -27,6 +29,7 @@ class ContactList extends StatelessWidget {
                 InkWell(
                   child: ListTile(
                     onTap: () {
+                      context.read<MessageProvider>().disposeController();
                       Navigator.push(
                         context,
                         MaterialPageRoute(
