@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/app/mobile/contacts/view/contact_list.dart';
+import 'package:whatsapp_clone/app/mobile/message_list/view/contact_list.dart';
 import 'package:whatsapp_clone/web/widgets/web_profile_bar.dart';
 import 'package:whatsapp_clone/web/widgets/web_search_bar.dart';
 

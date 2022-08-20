@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
-import 'package:whatsapp_clone/app/mobile/contacts/view/info.dart';
+import 'package:whatsapp_clone/app/mobile/message_list/view/info.dart';
 import 'package:whatsapp_clone/app/mobile/status/widgets/status_builder.dart';
 
 class StatusScreen extends StatelessWidget {

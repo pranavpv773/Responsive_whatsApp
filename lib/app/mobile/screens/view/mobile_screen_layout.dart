@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
 import 'package:whatsapp_clone/app/mobile/calls/view/calls.dart';
-import 'package:whatsapp_clone/app/mobile/contacts/view/contact_list.dart';
+import 'package:whatsapp_clone/app/mobile/message_list/view/contact_list.dart';
+import 'package:whatsapp_clone/app/mobile/initialize/view/widgets/appbar_change.dart';
+import 'package:whatsapp_clone/app/mobile/initialize/view_model/choose_provider.dart';
 import 'package:whatsapp_clone/app/mobile/status/view/status.dart';
 import 'package:whatsapp_clone/app/mobile/utility/view/more_vert.dart';
+
+import 'widgets/appbar.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
@@ -14,53 +19,15 @@ class MobileScreenLayout extends StatelessWidget {
       initialIndex: 0,
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: appBarColor,
-          elevation: 0,
-          title: const Text(
-            'Whatsapp',
-            style: TextStyle(
-              color: Colors.grey,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-                color: Colors.grey,
+        appBar: context.watch<ChooseProvider>().searchSelect == false
+            ? const PreferredSize(
+                preferredSize: Size.fromHeight(100),
+                child: HomeTabAppbar(),
+              )
+            : const PreferredSize(
+                preferredSize: Size.fromHeight(100),
+                child: SearchAppbar(),
               ),
-            ),
-            const MoreOptions(),
-          ],
-          bottom: const TabBar(
-            indicatorColor: tabColor,
-            indicatorWeight: 4,
-            labelColor: tabColor,
-            unselectedLabelColor: Colors.grey,
-            labelStyle: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-            tabs: [
-              // Tab(
-              //   icon: Icon(
-              //     Icons.camera,
-              //   ),
-              // ),
-              Tab(
-                text: "CHATS",
-              ),
-              Tab(
-                text: "STATUS",
-              ),
-              Tab(
-                text: "Calls",
-              ),
-            ],
-          ),
-        ),
         body: const TabBarView(
           children: [
             Center(

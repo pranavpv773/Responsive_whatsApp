@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
-import 'package:whatsapp_clone/app/mobile/contacts/view/info.dart';
+import 'package:whatsapp_clone/app/mobile/message_list/view/info.dart';
 import 'package:whatsapp_clone/app/mobile/message/view/message_screen.dart';
 import 'package:whatsapp_clone/app/mobile/message/view_model/message_provider.dart';
+import 'package:whatsapp_clone/app/mobile/message_list/view_model/message_list_provider.dart';
+import 'package:whatsapp_clone/app/mobile/new_message/view/new_message.dart';
+import 'package:whatsapp_clone/app/mobile/routes/routes.dart';
 
 class ContactList extends StatelessWidget {
   const ContactList({Key? key}) : super(key: key);
@@ -13,7 +16,11 @@ class ContactList extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: tabColor,
-        onPressed: () {},
+        onPressed: () {
+          RoutesProvider.nextScreen(
+            screen: const NewMessageScreen(),
+          );
+        },
         child: const Icon(
           Icons.message,
           color: Colors.white,
@@ -28,16 +35,18 @@ class ContactList extends StatelessWidget {
               children: [
                 InkWell(
                   child: ListTile(
+                    selectedTileColor: chatBarMessage,
+                    selectedColor: tabColor,
+                    selected: context.watch<MessageListProvider>().isSelected,
                     onTap: () {
-                      context.read<MessageProvider>().disposeController();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MessageScreen(
-                            userName: info[index]['name'].toString(),
-                            profileImage: info[index]['profilePic'].toString(),
-                            lastSceen: info[index]['time'].toString(),
-                          ),
+                      context
+                          .read<MessageProvider>()
+                          .disposeController(context);
+                      RoutesProvider.nextScreen(
+                        screen: MessageScreen(
+                          userName: info[index]['name'].toString(),
+                          profileImage: info[index]['profilePic'].toString(),
+                          lastSceen: info[index]['time'].toString(),
                         ),
                       );
                     },
@@ -68,6 +77,8 @@ class ContactList extends StatelessWidget {
                         color: Colors.grey,
                       ),
                     ),
+                    onLongPress: () =>
+                        context.read<MessageListProvider>().toggleSelection(),
                   ),
                 ),
                 const Divider(
