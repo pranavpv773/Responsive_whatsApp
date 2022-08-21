@@ -18,7 +18,6 @@ class MessageProvider with ChangeNotifier {
   disposeController(BuildContext context) {
     if (messageController.text.isNotEmpty) {
       messageController.clear();
-      print('reached');
       messageController.text = '';
       visibleIcons = true;
       notifyListeners();

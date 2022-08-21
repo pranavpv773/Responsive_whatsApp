@@ -1,13 +1,9 @@
 // ignore_for_file: body_might_complete_normally_nullable
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
-import 'package:whatsapp_clone/app/mobile/message/view_model/message_provider.dart';
-
 import 'widgets/action_buttons.dart';
 import 'widgets/second_float.dart';
-import 'widgets/three_icon_float.dart';
 
 class MessageScreen extends StatelessWidget {
   const MessageScreen(

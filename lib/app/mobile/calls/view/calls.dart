@@ -15,7 +15,7 @@ class CallScreen extends StatelessWidget {
         onPressed: () {},
         child: const Icon(
           Icons.call_sharp,
-          color: Colors.white,
+          color: kWhite,
         ),
       ),
     );

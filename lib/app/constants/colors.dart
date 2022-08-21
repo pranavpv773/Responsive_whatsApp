@@ -13,3 +13,4 @@ const chatBarMessage = Color.fromRGBO(30, 36, 40, 1);
 const mobileChatBoxColor = Color.fromRGBO(31, 44, 52, 1);
 const kGrey = Colors.grey;
 const kWidth10 = SizedBox(width: 10);
+const kWhite = Colors.white;

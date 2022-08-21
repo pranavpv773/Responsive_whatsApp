@@ -47,7 +47,7 @@ class StatusScreen extends StatelessWidget {
         onPressed: () {},
         child: const Icon(
           Icons.camera_alt,
-          color: Colors.white,
+          color: kWhite,
         ),
       ),
     );
