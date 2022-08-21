@@ -39,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
           ),
-          ListbuiderHelper(
+          const ListbuiderHelper(
             title: 'name',
             subtitle:
                 'This is not your username or pin.This name will be visible to your WhatsApp contacts.',
@@ -49,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
             first: true,
           ),
           const Divident(),
-          ListbuiderHelper(
+          const ListbuiderHelper(
             title: 'About',
             subtitle: 'busy',
             icon1: Icons.info,
@@ -57,7 +57,7 @@ class ProfileScreen extends StatelessWidget {
             first: false,
           ),
           const Divident(),
-          ListbuiderHelper(
+          const ListbuiderHelper(
             title: 'name',
             subtitle: '+91 7034888756',
             icon1: Icons.phone,
@@ -84,7 +84,7 @@ class Divident extends StatelessWidget {
 }
 
 class ListbuiderHelper extends StatelessWidget {
-  ListbuiderHelper(
+  const ListbuiderHelper(
       {Key? key,
       required this.title,
       required this.subtitle,
@@ -93,7 +93,7 @@ class ListbuiderHelper extends StatelessWidget {
       this.sub,
       this.first})
       : super(key: key);
-  bool? first;
+  final bool? first;
   final String title;
   final String subtitle;
   final String? sub;

@@ -23,7 +23,7 @@ class ContactList extends StatelessWidget {
         },
         child: const Icon(
           Icons.message,
-          color: Colors.white,
+          color: kWhite,
         ),
       ),
       body: Padding(
