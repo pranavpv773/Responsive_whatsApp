@@ -30,8 +30,9 @@ class FloatingMessage extends StatelessWidget {
           expands: true,
           cursorColor: tabColor,
           cursorHeight: height / 25,
-          onChanged: (value) =>
-              {context.read<MessageProvider>().changingWidgets(value)},
+          onChanged: (value) {
+            context.read<MessageProvider>().changingWidgets(value);
+          },
           style: const TextStyle(
             overflow: TextOverflow.clip,
             color: kGrey,
@@ -42,7 +43,9 @@ class FloatingMessage extends StatelessWidget {
             fillColor: appBarColor,
             filled: true,
             prefixIcon: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 2.0,
+              ),
               child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -52,14 +55,18 @@ class FloatingMessage extends StatelessWidget {
               ),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(
+                30,
+              ),
               borderSide: const BorderSide(
                 color: appBarColor,
                 width: 2.0,
               ),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(
+                30,
+              ),
               borderSide: const BorderSide(
                 color: appBarColor,
                 width: 2.0,

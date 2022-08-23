@@ -16,7 +16,9 @@ class VerifyPhone extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           'Verify your phone number',
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(
+            fontSize: 18,
+          ),
         ),
         actions: [
           IconButton(
@@ -35,7 +37,9 @@ class VerifyPhone extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 78.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 78.0,
+            ),
             child: TextFormField(
               cursorColor: tabColor,
               decoration: const InputDecoration(
@@ -58,14 +62,18 @@ class VerifyPhone extends StatelessWidget {
               enableInteractiveSelection: true,
               readOnly: true,
               onTap: () {
-                RoutesProvider.nextScreen(screen: const ChooseCountry());
+                RoutesProvider.nextScreen(
+                  screen: const ChooseCountry(),
+                );
               },
             ),
           ),
           Row(
             children: const [
               Padding(
-                padding: EdgeInsets.only(left: 88.0),
+                padding: EdgeInsets.only(
+                  left: 88.0,
+                ),
                 child: VerifyTextFormField(),
               ),
             ],

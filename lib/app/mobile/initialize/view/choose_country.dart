@@ -13,11 +13,15 @@ class ChooseCountry extends StatelessWidget {
     return Scaffold(
       appBar: context.watch<ChooseProvider>().searchSelect == false
           ? PreferredSize(
-              preferredSize: Size.fromHeight(height / 15),
+              preferredSize: Size.fromHeight(
+                height / 15,
+              ),
               child: const ChooseAppbar(),
             )
           : PreferredSize(
-              preferredSize: Size.fromHeight(height / 15),
+              preferredSize: Size.fromHeight(
+                height / 15,
+              ),
               child: const SearchAppbar(),
             ),
       body: ListView(),

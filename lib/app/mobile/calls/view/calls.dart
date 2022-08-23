@@ -8,7 +8,9 @@ class CallScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const Center(
-        child: Text('Calls'),
+        child: Text(
+          'Calls',
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: tabColor,
