@@ -63,9 +63,14 @@ class MessageScreen extends StatelessWidget {
           ActionButtons(),
         ],
       ),
-      body: Container(color: Colors.indigo),
+      body: Container(
+        color: Colors.indigo,
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
-      floatingActionButton: SecondFloatButton(width: width, height: height),
+      floatingActionButton: SecondFloatButton(
+        width: width,
+        height: height,
+      ),
     );
   }
 }

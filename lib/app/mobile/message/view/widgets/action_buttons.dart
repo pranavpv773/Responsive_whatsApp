@@ -11,16 +11,24 @@ class ActionButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: const [
         Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(
+            8.0,
+          ),
           child: Icon(Icons.videocam),
         ),
         Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(
+            8.0,
+          ),
           child: Icon(Icons.call),
         ),
         Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Icon(Icons.more_vert),
+          padding: EdgeInsets.all(
+            8.0,
+          ),
+          child: Icon(
+            Icons.more_vert,
+          ),
         )
       ],
     );
