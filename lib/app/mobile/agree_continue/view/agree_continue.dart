@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
+import 'package:whatsapp_clone/app/mobile/initialize/view/verify_phon.dart';
+import 'package:whatsapp_clone/app/mobile/routes/routes.dart';
 
 class WelcomeAgree extends StatelessWidget {
   const WelcomeAgree({Key? key}) : super(key: key);
@@ -24,7 +26,10 @@ class WelcomeAgree extends StatelessWidget {
               TextButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(tabColor)),
-                onPressed: () {},
+                onPressed: () {
+                  // ignore: prefer_const_constructors
+                  RoutesProvider.nextScreen(screen: VerifyPhone());
+                },
                 child: const Text(
                   'AGREE AND CONTINUE',
                   style: TextStyle(color: kWhite),
