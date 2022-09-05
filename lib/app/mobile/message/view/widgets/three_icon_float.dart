@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
+import 'package:whatsapp_clone/app/mobile/message/view_model/emoji_provider.dart';
 import 'package:whatsapp_clone/app/mobile/message/view_model/message_provider.dart';
 
 class FloatingMessage extends StatelessWidget {
@@ -44,7 +45,7 @@ class FloatingMessage extends StatelessWidget {
             filled: true,
             prefixIcon: Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 2.0,
+                horizontal: 1.0,
               ),
               child: IconButton(
                 onPressed: () {},
@@ -94,7 +95,10 @@ class FloatingMessage extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            print('object');
+                            modelBottomsheet(context);
+                          },
                           icon: const Icon(
                             Icons.attach_file_sharp,
                             color: kGrey,
@@ -120,7 +124,9 @@ class FloatingMessage extends StatelessWidget {
                       ],
                     )
                   : IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        modelBottomsheet(context);
+                      },
                       icon: const Icon(
                         Icons.attach_file_sharp,
                         color: kGrey,
@@ -132,5 +138,57 @@ class FloatingMessage extends StatelessWidget {
         ),
       );
     });
+  }
+
+  Future<dynamic> modelBottomsheet(BuildContext context) {
+    return showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return SizedBox(
+            height: 300,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 70.0),
+              child: Center(
+                child: GridView.builder(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  physics: const ScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 50,
+                    mainAxisExtent: 150,
+                    childAspectRatio: 3 / 2,
+                    crossAxisSpacing: 50,
+                    mainAxisSpacing: 0,
+                  ),
+                  itemCount: 7,
+                  itemBuilder: (BuildContext ctx, index) {
+                    return InkWell(
+                        onTap: () {},
+                        child: Stack(
+                          children: [
+                            CircleAvatar(
+                              radius: 100,
+                              backgroundColor: context
+                                  .read<EmojiProvider>()
+                                  .iconListStrings[index]['color'] as Color,
+                              child: Icon(context
+                                  .read<EmojiProvider>()
+                                  .iconListStrings[index]['icon'] as IconData),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              child: Text(context
+                                  .read<EmojiProvider>()
+                                  .iconListStrings[index]['section']
+                                  .toString()),
+                            ),
+                          ],
+                        ));
+                  },
+                ),
+              ),
+            ),
+          );
+        });
   }
 }

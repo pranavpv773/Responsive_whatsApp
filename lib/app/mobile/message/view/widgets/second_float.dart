@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/app/constants/colors.dart';
+import 'package:whatsapp_clone/app/mobile/message/view_model/emoji_provider.dart';
 import 'package:whatsapp_clone/app/mobile/message/view_model/message_provider.dart';
 import 'three_icon_float.dart';
 
@@ -16,17 +17,17 @@ class SecondFloatButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return
+        // Column(
+        //   mainAxisAlignment: MainAxisAlignment.end,
+        //   children: [
+        Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 1.0,
-          ),
-          child: FloatingMessage(
-            width: width,
-            height: height,
-          ),
+        FloatingMessage(
+          width: width,
+          height: height,
         ),
         Padding(
           padding: const EdgeInsets.only(
@@ -54,5 +55,10 @@ class SecondFloatButton extends StatelessWidget {
         ),
       ],
     );
+    //     context.read<EmojiProvider>().emojiShowing == true
+    //         ? buildSticker()
+    //         : Container()
+    //   ],
+    // );
   }
 }
