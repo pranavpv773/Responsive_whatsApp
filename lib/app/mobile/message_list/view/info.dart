@@ -4,42 +4,40 @@ const info = [
     'message': 'Hey, how are you doing?',
     'time': '1:23 pm',
     'profilePic':
-        'https://upload.wikimedia.org/wikipedia/commons/8/85/Elon_Musk_Royal_Society_%28crop1%29.jpg',
+        'https://i.pinimg.com/236x/fd/e7/93/fde793679fc7235180279a830b6fd736.jpg',
   },
   {
     'name': 'Bhavya',
     'message': 'Hello, whats up',
     'time': '12:45 pm',
     'profilePic':
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZL7it9GAAc4a1Fb40d6fxu-paaRZ-zG2yQ&usqp=CAU',
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
   },
   {
     'name': 'Sahal Brototype',
     'message': 'Hello, I want to sleep.',
     'time': '12:03 pm',
     'profilePic':
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZL7it9GAAc4a1Fb40d6fxu-paaRZ-zG2yQ&usqp=CAU',
+        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
   },
   {
     'name': 'Vaisakh Brototype',
     'message': 'Call me, have some work',
     'time': '12:00 pm',
-    'profilePic':
-        'https://pbs.twimg.com/profile_images/1419974913260232732/Cy_CUavB.jpg',
+    'profilePic': 'https://pbs.twimg.com/media/BduTxWnIUAAKT_5.jpg',
   },
   {
     'name': 'Anoop Amaze',
     'message': 'You ate food?',
     'time': '11:59 am',
-    'profilePic':
-        'https://uploads.dailydot.com/2018/10/olli-the-polite-cat.jpg?auto=compress%2Cformat&ixlib=php-3.3.0',
+    'profilePic': 'https://blog.texasbar.com/files/2014/05/NickLaurent1.gif',
   },
   {
     'name': 'Ashim Brototype',
     'message': 'Yo!!!!! Long time, no see!?',
     'time': '11:53 am',
     'profilePic':
-        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXUv6ZrOiS4QQaWCBlsw2zbj64_mcv8Bk-ZCLwDSWLznS_Iu2bxfnet_eaChBoikcPoCc&usqp=CAU',
   },
   {
     'name': 'Vishnu Brototype',
