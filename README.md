@@ -4,13 +4,5 @@
 
 ## Using MVVM Architecture, firebase, Provider and Rest API
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![WhatsApp Image 2022-11-06 at 21 44 53](https://user-images.githubusercontent.com/91565180/200181897-cc44a60b-c648-4db0-ad50-f44f7bbfcc1f.jpeg)
